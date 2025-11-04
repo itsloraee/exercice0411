@@ -59,18 +59,19 @@
         </thead>
         <tbody>
             <!-- TODO: Ajouter une boucle ici pour afficher chaque post -->
+            @forelse ($posts as $post )
             <tr>
-                @foreach ($posts as $post)
-                    
-                @endforeach
-                <td>1</td>
-                <td>Titre du post</td>
-                <td>Nom de l'auteur</td>
-                <td>04/11/2025</td>
+                <td>{{$post->id}}</td>
+                <td>{{$post->title}}</td>
+                <td>{{$post->author}}</td>
+                <td> {{$post->created_at}}</td>
                 <td>
                     <a href="#">Voir</a>
                 </td>
             </tr>
+            @empty
+            Il n'y a pas de post
+            @endforelse
         </tbody>
     </table>
 </body>
