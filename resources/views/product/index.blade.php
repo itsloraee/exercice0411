@@ -60,16 +60,20 @@
         </thead>
         <tbody>
             <!-- TODO: Ajouter une boucle ici pour afficher chaque produit -->
+            @forelse ($products as $product)
             <tr>
-                <td>1</td>
-                <td>Nom du produit</td>
-                <td>29.99€</td>
-                <td>15</td>
-                <td>Électronique</td>
+                <td>{{$product->id}}</td>
+                <td>{{$product->name}}</td>
+                <td>{{$product->price}}</td>
+                <td>{{$product->stock}}</td>
+                <td>{{$product->category}}</td>
                 <td>
-                    <a href="#">Voir</a>
+                    <a href="{{route('products.show' , $product)}}">Voir</a>
                 </td>
             </tr>
+             @empty
+             Il n'y a pas de produits
+            @endforelse
         </tbody>
     </table>
 </body>

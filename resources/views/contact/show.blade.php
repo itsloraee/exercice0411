@@ -34,7 +34,7 @@
         <p><strong>Entreprise:</strong> Acme Corp</p>
     </div>
     
-    <a href="#">Retour à la liste</a>
+    <a href="{{route('contacts.index')}}">Retour à la liste</a>
     
 </body>
 </html>

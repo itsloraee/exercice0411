@@ -53,20 +53,21 @@
 <body>
     <h1>Ajouter un Post</h1>
     
-    <form action="#" method="POST">
+    <form action="{{route('posts.create')}}" method="POST">
         <!-- TODO: Ajouter un token CSRF -->
-        
+        @csrf
         <label for="title">Titre</label>
         <input type="text" id="title" name="title" placeholder="Entrez le titre">
         
         <!-- TODO: Ajouter un input pour l'auteur -->
-        
+        <label for="author">Auteur</label>
+        <input type="text" id="author" name="author" placeholder="Entrez le nom de l'auteur">
         <!-- TODO: Ajouter un textarea pour le contenu -->
-        
+        <textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
         <button type="submit">Ajouter</button>
     </form>
     
-    <a href="#">Retour à la liste</a>
+    <a href="{{route('posts.index')}}">Retour à la liste</a>
     
 </body>
 </html>

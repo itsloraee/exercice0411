@@ -19,7 +19,7 @@ Route::get('/posts/create', [PostController::class, 'create'])->name('posts.crea
 // Enregistre le nouveau post en base de données
 Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 // Affiche les détails d'un post spécifique
-Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show');
+Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
 
 // ===== PRODUCTS =====
 // Affiche la liste de tous les produits
@@ -29,7 +29,7 @@ Route::get('/products/create', [ProductController::class, 'create'])->name('prod
 // Enregistre le nouveau produit en base de données
 Route::post('/products', [ProductController::class, 'store'])->name('products.store');
 // Affiche les détails d'un produit spécifique
-Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
+Route::get('/products/{product}', [ProductController::class, 'show'])->name('products.show');
 
 // ===== CONTACTS =====
 // Affiche la liste de tous les contacts
@@ -39,7 +39,7 @@ Route::get('/contacts/create', [ContactController::class, 'create'])->name('cont
 // Enregistre le nouveau contact en base de données
 Route::post('/contacts', [ContactController::class, 'store'])->name('contacts.store');
 // Affiche les détails d'un contact spécifique
-Route::get('/contacts/{id}', [ContactController::class, 'show'])->name('contacts.show');
+Route::get('/contacts/{contact}', [ContactController::class, 'show'])->name('contacts.show');
 
 // ===== BOOKS =====
 // Affiche la liste de tous les livres

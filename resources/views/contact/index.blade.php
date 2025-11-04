@@ -60,16 +60,20 @@
         </thead>
         <tbody>
             <!-- TODO: Ajouter une boucle ici pour afficher chaque contact -->
+            @forelse ($contacts as $contact)  
             <tr>
-                <td>1</td>
-                <td>Jean Dupont</td>
-                <td>jean@example.com</td>
-                <td>06 12 34 56 78</td>
-                <td>Acme Corp</td>
+                <td>{{$contact->id}}</td>
+                <td>{{$contact->name}}</td>
+                <td>{{$contact->email}}</td>
+                <td>{{$contact->phone}}</td>
+                <td>{{$contact->company}}</td>
                 <td>
-                    <a href="#">Voir</a>
+                    <a href="{{route('contacts.show' , $contact)}}">Voir</a>
                 </td>
             </tr>
+            @empty
+            Il n'y a aucun contact
+            @endforelse
         </tbody>
     </table>
 </body>

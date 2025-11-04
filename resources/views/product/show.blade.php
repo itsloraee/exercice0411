@@ -35,7 +35,7 @@
         <p>Description du produit ici</p>
     </div>
     
-    <a href="#">Retour à la liste</a>
+    <a href="{{route('products.index')}}">Retour à la liste</a>
     
 </body>
 </html>
