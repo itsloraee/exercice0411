@@ -30,12 +30,13 @@ class PostController extends Controller
      * Store a newly created resource in storage.
      */
      public function store(Request $request){
-        $validated = $request->validate(['title' => 'required|string|max:255',]);
-        $validated = $request->validate(['content' => 'required|string|max:255',]);
-        $validated = $request->validate(['author' => 'required|string|max:255',]);
+        $validated = $request->validate(['title' => 'required|string|max:255',
+        'content' => 'required|string|max:255',
+        'author' => 'required|string|max:255',]);
+
 
         Post::create($validated);
-         return redirect()->route('posts.index' , $post)->with('success', 'Post créé avec succès !');
+        return redirect()->route('posts.index')->with('success', 'Post créé avec succès !');
     }
 
     /**

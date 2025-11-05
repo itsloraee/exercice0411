@@ -53,7 +53,7 @@
 <body>
     <h1>Ajouter un Post</h1>
     
-    <form action="{{route('posts.create')}}" method="POST">
+    <form action="{{route('posts.store')}}" method="POST">
         <!-- TODO: Ajouter un token CSRF -->
         @csrf
         <label for="title">Titre</label>
@@ -63,7 +63,7 @@
         <label for="author">Auteur</label>
         <input type="text" id="author" name="author" placeholder="Entrez le nom de l'auteur">
         <!-- TODO: Ajouter un textarea pour le contenu -->
-        <textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
+        <textarea name="content" id="textarea" cols="30" rows="10" placeholder="Écrire un texte ici"></textarea>
         <button type="submit">Ajouter</button>
     </form>
     
