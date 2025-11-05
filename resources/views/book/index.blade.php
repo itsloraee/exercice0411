@@ -59,15 +59,19 @@
         </thead>
         <tbody>
             <!-- TODO: Ajouter une boucle ici pour afficher chaque post -->
+            @forelse ($books as $book)
             <tr>
                 <td>1</td>
                 <td>Titre du post</td>
                 <td>Nom de l'auteur</td>
                 <td>04/11/2025</td>
                 <td>
-                    <a href="#">Voir</a>
+                    <a href="{{route('books.show')}}">Voir</a>
                 </td>
             </tr>
+            @empty
+              Il n'y a pas de livre
+            @endforelse
         </tbody>
     </table>
 </body>

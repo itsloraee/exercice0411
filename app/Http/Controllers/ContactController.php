@@ -30,9 +30,22 @@ class ContactController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+   
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate
+        ([
+        'name' => 'required|string|max:255',
+        'email' => 'required|email|unique:contacts,email',
+        'phone' => 'required|integer|min:3',
+        'address'=>'required|string|max:255',
+        'company'=>'required|string|max:255'
+        ]);
+
+        $contact = Contact::create($validated);
+        dd($contact);
+        return redirect()->route('contacts.index')->with('success', 'Contact ajouté avec succès !');
+
     }
 
     /**

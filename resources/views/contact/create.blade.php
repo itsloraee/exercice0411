@@ -53,24 +53,30 @@
 <body>
     <h1>Ajouter un Contact</h1>
     
-    <form action="#" method="POST">
+    <form action="{{route('contacts.store')}}" method="POST">
         <!-- TODO: Ajouter un token CSRF -->
-        
+        @csrf
         <label for="name">Nom</label>
         <input type="text" id="name" name="name" placeholder="Entrez le nom">
         
         <!-- TODO: Ajouter un input pour l'email -->
+        <label for="title">Email</label>
+        <input type="email" id="email" name="email" placeholder="Entrez l'adresse e-mail">
         
         <!-- TODO: Ajouter un input pour le téléphone -->
+        <label for="title">Téléphone</label>
+        <input type="integer" id="telephone" name="telephone" placeholder="Entrez le numéro de téléphone">
         
         <!-- TODO: Ajouter un textarea pour l'adresse -->
-        
+        <textarea name="address" id="address" cols="30" rows="10"></textarea>
         <!-- TODO: Ajouter un input pour l'entreprise -->
+        <label for="title">Entreprise</label>
+        <input type="text" id="entreprise" name="entreprise" placeholder="Entrez le nom l'entreprise">
         
         <button type="submit">Ajouter</button>
     </form>
     
-    <a href="#">Retour à la liste</a>
+    <a href="{{route('contacts.index')}}">Retour à la liste</a>
     
 </body>
 </html>

@@ -35,7 +35,7 @@
         <p>Contenu du post ici</p>
     </div>
     
-    <a href="#">Retour à la liste</a>
+    <a href="{{route('books.index')}}">Retour à la liste</a>
     
 </body>
 </html>

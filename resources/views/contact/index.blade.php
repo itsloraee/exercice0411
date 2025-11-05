@@ -45,7 +45,7 @@
 <body>
     <h1>Liste des Contacts</h1>
     
-    <a href="#" class="btn">Ajouter un contact</a>
+    <a href="{{route('contacts.create')}}" class="btn">Ajouter un contact</a>
     
     <table>
         <thead>
